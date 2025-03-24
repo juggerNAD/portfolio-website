@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -14,9 +14,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #121212;
     color: white;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -26,14 +26,10 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -41,8 +37,11 @@ nav ul li a {
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px;
-    height: 20px;
+    width: 50px;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
 .switch input {
@@ -53,34 +52,18 @@ nav ul li a {
 
 .slider {
     position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 20px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
+    top: 3px;
     left: 3px;
-    bottom: 3px;
+    width: 20px;
+    height: 20px;
     background-color: white;
-    transition: .4s;
     border-radius: 50%;
+    transition: 0.4s;
 }
 
 input:checked + .slider {
+    transform: translateX(25px);
     background-color: #2196F3;
-}
-
-input:checked + .slider:before {
-    transform: translateX(20px);
 }
 
 /* Hero Section */
@@ -91,8 +74,8 @@ input:checked + .slider:before {
     justify-content: center;
     text-align: center;
     padding: 100px 20px;
-    background-color: white;
-    transition: background-color 0.3s ease;
+    background: linear-gradient(to bottom, #121212, #333);
+    color: white;
 }
 
 .hero-content h1 {
@@ -101,11 +84,33 @@ input:checked + .slider:before {
 }
 
 .hero-image {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
+    border: 3px solid white;
     margin-top: 20px;
+}
+
+/* Portfolio Section */
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.project-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 /* Contact Form */
@@ -114,12 +119,17 @@ form {
     flex-direction: column;
     width: 50%;
     margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 form input, form textarea, form button {
     margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -128,6 +138,7 @@ form button {
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
@@ -139,9 +150,8 @@ form button:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #121212;
     color: white;
-    transition: background-color 0.3s ease;
 }
 
 /* Dark Mode */
@@ -152,7 +162,7 @@ footer {
 
 .dark-mode header,
 .dark-mode footer {
-    background-color: #121212;
+    background-color: #000;
 }
 
 .dark-mode a {
