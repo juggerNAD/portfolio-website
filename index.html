@@ -16,6 +16,10 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
     </header>
 
     <section id="about">
@@ -25,11 +29,18 @@
 
     <section id="projects">
         <h2>Projects</h2>
-        <p>Here are some of my recent works:</p>
-        <ul>
-            <li>Project 1 - <a href="#">View</a></li>
-            <li>Project 2 - <a href="#">View</a></li>
-        </ul>
+        <div class="project">
+            <img src="project1.jpg" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>Description of project 1.</p>
+            <a href="#">View Project</a>
+        </div>
+        <div class="project">
+            <img src="project2.jpg" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>Description of project 2.</p>
+            <a href="#">View Project</a>
+        </div>
     </section>
 
     <section id="contact">
@@ -40,5 +51,7 @@
     <footer>
         <p>&copy; 2024 My Portfolio</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

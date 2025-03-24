@@ -3,6 +3,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
+    transition: all 0.3s ease-in-out;
 }
 
 header {
@@ -10,6 +12,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
 nav ul {
@@ -32,6 +35,12 @@ section {
     background: white;
     margin: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.02);
 }
 
 footer {
@@ -39,4 +48,74 @@ footer {
     padding: 10px;
     background-color: #333;
     color: white;
+}
+
+.project {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+}
+
+.switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-mode section {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode header, body.dark-mode footer {
+    background-color: #222;
 }
